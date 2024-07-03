@@ -1,0 +1,27 @@
+1.Отобразить подключенный девайс в консоли. 
+./adb devices
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+List of devices attached
+8fb614d6        device
+
+2. Установить .apk файл приложения todolist на телефон с компьютера через  ADB
+   ./adb install /d/ADB_android/app-debug.apk
+Performing Streamed Install
+Success
+
+
+3. Вывести адрес приложения todolist в системе Android
+    ./adb shell pm list packages | grep reminder
+package:com.qrolic.reminderapp
+
+  4. Сделать скриншот запущенного приложения todolist и сразу скопировать на компьютер в одной команде.
+ 5. Вывести в консоль логи приложения todolist
+    ./adb logcat | grep com.qrolic.reminderapp
+
+ 6. Скопировать логи приложения todolist на компьютер.
+     ./adb logcat | grep  com.qrolic.reminderapp >  /d/ADB_android/logs.txt
+ 7. Удалить приложение todolist с телефона через ADB
+    ./adb uninstall  com.qrolic.reminderapp
+Success
+
